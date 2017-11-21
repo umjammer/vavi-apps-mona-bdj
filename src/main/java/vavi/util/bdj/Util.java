@@ -16,33 +16,15 @@ import java.util.StringTokenizer;
 
 
 /**
- * Util. 
+ * Util.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080902 nsano initial version <br>
  */
-public class Util {
+public final class Util {
 
     /** */
-    public static String toPlainText(String text) {
-//System.err.println("++++++++++++++++ text: " + text.length() + " ++++++++++++++++");
-//System.err.println("TEXT: " + text);
-        text = replace(text, "<br>", "\n");
-        int p;
-        int q = 0;
-        while ((p = text.indexOf("<a href=", q)) != -1) {
-            q = text.indexOf(">", p + 8);
-            if (q != -1) {
-//System.err.println("Åö 1: " + text.substring(0, p) + "\nÅö 2: " + text.substring(q + 1));
-                text = text.substring(0, p) + text.substring(q + 1);
-                q++;
-            }
-        }
-        text = replace(text, "</a>", "");
-        text = replace(text, "&gt;", ">");
-        text = replace(text, "&lt;", "<");
-        text = replace(text, "&nbsp;", " ");
-        return text;
+    private Util() {
     }
 
     /** */
@@ -50,7 +32,7 @@ public class Util {
         int p;
         int q = 0;
         while ((p = string.indexOf(target, q)) != -1) {
-//System.err.println("Åö 1: " + text.substring(0, p) + "\nÅö 2: " + text.substring(q + 1));
+//System.err.println("‚òÖ 1: " + text.substring(0, p) + "\n‚òÖ 2: " + text.substring(q + 1));
             string = string.substring(0, p) + replacement + string.substring(p + target.length());
             q = p + replacement.length();
         }
@@ -59,10 +41,10 @@ public class Util {
 
     private static final Map platforms = new HashMap();
 
-    public static final String BDJ_PS3 = "PS3"; 
-    public static final String BDJ_POWER_DVD = "PowerDVD"; 
-    public static final String BDJ_DMR_BW800 = "Panasonic DMR-BW800"; 
-    public static final String BDJ_UNKNOWN = "unknown"; 
+    public static final String BDJ_PS3 = "PS3";
+    public static final String BDJ_POWER_DVD = "PowerDVD";
+    public static final String BDJ_DMR_BW800 = "Panasonic DMR-BW800";
+    public static final String BDJ_UNKNOWN = "unknown";
 
     static {
         platforms.put("/VP/", "PS3");

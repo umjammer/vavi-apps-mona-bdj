@@ -16,7 +16,7 @@ import java.util.TimerTask;
 
 
 /**
- * Mona. 
+ * Mona.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080902 nsano initial version <br>
@@ -30,7 +30,7 @@ public class Mona {
     private List boards;
 
     /** */
-    private BbsBoardsFactory bbsBoardsFactory = new MyBbsBoardsFactory(); 
+    private BbsBoardsFactory bbsBoardsFactory = new MyBbsBoardsFactory();
 
     /** */
     public Mona() {
@@ -94,7 +94,7 @@ System.err.println("BOARD: current is " + targetBoard);
 
     /** */
     public class MonaEvent extends EventObject {
-        private List datum;
+        private List data;
         private BbsThread thread;
         private String message;
         /** */
@@ -103,14 +103,14 @@ System.err.println("BOARD: current is " + targetBoard);
             this.message = message;
         }
         /** */
-        public MonaEvent(Object source, BbsThread thread, List datum) {
+        public MonaEvent(Object source, BbsThread thread, List data) {
             super(source);
-            this.datum = datum;
+            this.data = data;
             this.thread = thread;
         }
         /** */
-        public List getBbsDatum() {
-            return datum;
+        public List getBbsData() {
+            return data;
         }
         /** */
         public BbsThread getBbsThread() {
@@ -149,20 +149,20 @@ System.err.println("THREAD: current is " + targetThread);
     }
 
     /** */
-    private BbsDatumFactory bbsDatumFactory = new MyBbsDatumFactory();
+    private BbsDataFactory bbsDataFactory = new MyBbsDataFactory();
 
     /** */
     private class MyTimerTask extends TimerTask {
         int lastIndex = 0;
         public void run() {
             try {
-                List datum = bbsDatumFactory.readFrom(targetThread);
+                List data = bbsDataFactory.readFrom(targetThread);
                 List responses = new ArrayList();
-                for (int i = 0; i < datum.size(); i++) {
-                    BbsData data = (BbsData) datum.get(i);
-                    if (data.getIndex() > lastIndex) {
-                        responses.add(data);
-                        lastIndex = data.getIndex();
+                for (int i = 0; i < data.size(); i++) {
+                    BbsData datum = (BbsData) data.get(i);
+                    if (datum.getIndex() > lastIndex) {
+                        responses.add(datum);
+                        lastIndex = datum.getIndex();
                     }
                 }
                 monaListener.whenThreadUpdated(new MonaEvent(this, targetThread, responses));
@@ -183,7 +183,7 @@ e.printStackTrace(System.err);
 System.err.println("LIVE: stopped by error");
             }
         }
-    }; 
+    };
 
     private Timer timer;
 

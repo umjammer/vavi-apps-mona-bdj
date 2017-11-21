@@ -6,11 +6,10 @@
 
 package vavi.apps.mona;
 
-import vavi.util.bdj.Util;
 
 
 /**
- * BbsThread. 
+ * BbsThread.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080831 nsano initial version <br>
@@ -35,7 +34,7 @@ public class BbsThread implements Comparable {
     private long lastModified;
     /** gunziped size */
     private int size;
-    /** loaded datum count */
+    /** loaded data count */
     private int index;
 
     /** */
@@ -59,22 +58,22 @@ public class BbsThread implements Comparable {
 
     /** */
     public String getTitleAsPlainText() {
-        return Util.toPlainText(title);
+        return HtmlUtil.toPlainText(title);
     }
 
     /** */
     public String toString() {
-        return title + " (" + responses + ") " + number + ", " + getInfluence(); 
+        return title + " (" + responses + ") " + number + ", " + getInfluence();
     }
 
-    /** ê®Ç¢ */
+    /** Âã¢„ÅÑ */
     public float getInfluence() {
 //System.err.println("1: " + responses);
 //System.err.println("2: " + ((float) (System.currentTimeMillis() - sinse) / (1000 * 60 * 60 * 24)));
         return responses / ((float) (System.currentTimeMillis() - sinse) / (1000 * 60 * 60 * 24));
     }
 
-    /* ê®Ç¢èá */
+    /* Âã¢„ÅÑÈ†Ü */
     public int compareTo(Object y) {
         return (int) Math.ceil(((BbsThread) y).getInfluence() - this.getInfluence());
     }

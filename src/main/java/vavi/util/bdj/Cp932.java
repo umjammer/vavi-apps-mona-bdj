@@ -5,7 +5,6 @@
 package vavi.util.bdj;
 
 
-
 /**
  * The Cp932 class contains a utility method for converting Microsoft's
  * Cp 932 into JIS.
@@ -14,7 +13,7 @@ package vavi.util.bdj;
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 1.0 01/06/97
  */
-public class Cp932 {
+public final class Cp932 {
 
     /** */
     private Cp932() {
@@ -81,10 +80,10 @@ public class Cp932 {
     }
 
     /**
-     * MS932 •¶š—ñ‚ğ Unicode •¶š—ñ‚É•ÏŠ·‚·‚éB
-     * 
-     * @param s Shift JIS ƒR[ƒh‚Ì•¶š—ñB
-     * @return Unicode •¶š—ñB
+     * MS932 æ–‡å­—åˆ—ã‚’ Unicode æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹ã€‚
+     *
+     * @param s Shift JIS ã‚³ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—ã€‚
+     * @return Unicode æ–‡å­—åˆ—ã€‚
      */
     public static String toUnicode(byte[] s) {
         int sl = s.length;

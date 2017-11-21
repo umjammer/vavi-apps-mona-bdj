@@ -19,7 +19,7 @@ import junit.framework.TestCase;
 
 
 /**
- * MonaAppTest. 
+ * MonaAppTest.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080901 nsano initial version <br>
@@ -55,7 +55,7 @@ System.err.println(boardListHtml);
 
     BbsBoardsFactory bbsBoardsFactory = new MyBbsBoardsFactory();
     BbsThreadsFactory bbsThreadsFactory = new MyBbsThreadsFactory();
-    BbsDatumFactory bbsDatumFactory = new MyBbsDatumFactory();
+    BbsDataFactory bbsDataFactory = new MyBbsDataFactory();
 
     public void test01() throws Exception {
         String boardUrl = "http://menu.2ch.net/bbsmenu.html";
@@ -63,7 +63,7 @@ System.err.println(boardListHtml);
         List boards = bbsBoardsFactory.readFrom(boardUrl);
         List liveBoards = new ArrayList();
 
-        String categoryLive = "実況ch";
+        String categoryLive = "螳滓ｳ…h";
 
         for (int i = 0; i < boards.size(); i++) {
             BbsBoard board = (BbsBoard) boards.get(i);
@@ -77,7 +77,7 @@ System.err.println(boardListHtml);
 System.err.println(board.category + ", " + board.name + ", " + board.url);
         }
 
-        String boardName = "番組ch(フジ)";
+        String boardName = "逡ｪ邨�ch(繝輔ず)";
 
         BbsBoard targetBoard = null;
         for (int i = 0; i < liveBoards.size(); i++) {
@@ -98,20 +98,20 @@ System.err.println(thread.getNumber() + ", " + thread.getTitle() + ", " + thread
 System.err.println("\n--- " + targetThread.getTitleAsPlainText() + " ---\n");
         int lastIndex = 0;
         do {
-            List datum = bbsDatumFactory.readFrom(targetThread);
+            List data = bbsDataFactory.readFrom(targetThread);
 //System.err.println("lastIndex: " + lastIndex);
-            for (int i = 0; i < datum.size(); i++) {
-                BbsData data = (BbsData) datum.get(i);
-                if (data.getIndex() <= lastIndex) {
+            for (int i = 0; i < data.size(); i++) {
+                BbsData datum = (BbsData) data.get(i);
+                if (datum.getIndex() <= lastIndex) {
 //System.err.println("SKIP: " + data.index);
                 } else {
 //try {
-System.err.println(data.toStringAsFormated() + "\n");
+System.err.println(datum.toStringAsFormated() + "\n");
 //} catch (Error t) {
 // System.err.println("FATAL: " + t + "\n" + data.raw);
 // throw t;
 //}
-                    lastIndex = data.getIndex();
+                    lastIndex = datum.getIndex();
                 }
             }
             Thread.sleep(3000);

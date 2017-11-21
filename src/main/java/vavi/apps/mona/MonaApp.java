@@ -34,7 +34,7 @@ import vavi.apps.mona.Mona.MonaListener;
 
 /**
  * Mona.
- * 
+ *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080829 nsano initial version <br>
  * @see "http://www.monazilla.org/"
@@ -86,7 +86,7 @@ e.printStackTrace(System.err);
     }
 
     /**
-     * <li> {@link #addNotify()} Ç≈ÉRÉìÉ|Å[ÉlÉìÉgÇ™ÉAÉNÉeÉBÉuÇ…Ç»Ç¡ÇΩÇÃÇéÊÇÍÇÈÇ›ÇΩÇ¢ 
+     * <li> {@link #addNotify()} „Åß„Ç≥„É≥„Éù„Éº„Éç„É≥„Éà„Åå„Ç¢„ÇØ„ÉÜ„Ç£„Éñ„Å´„Å™„Å£„Åü„ÅÆ„ÇíÂèñ„Çå„Çã„Åø„Åü„ÅÑ
      */
     private class MyView extends Container implements Runnable {
 
@@ -128,7 +128,7 @@ e.printStackTrace(System.err);
             int getLineCount() {
                 return Math.min(LINES, boards.size() - page * LINES);
             }
-            
+
             int getPageCount() {
                 return (boards.size() + LINES - 1) / LINES;
             }
@@ -174,7 +174,7 @@ e.printStackTrace(System.err);
                         line = 0;
                     }
                     break;
-                case KeyEvent.VK_ENTER: // Åõ
+                case KeyEvent.VK_ENTER: // ‚óã
                     try {
                         String boardName = ((BbsBoard) boards.get(getCurrentIndex())).name;
                         mona.setTargetBoardByName(boardName);
@@ -183,13 +183,13 @@ e.printStackTrace(System.err);
 System.err.println("MODE: THREAD");
                     } catch (Exception e) {
 e.printStackTrace(System.err);
-status = "5:" + e;                        
+status = "5:" + e;
                     }
                     break;
-                case 461:               // Å†
+                case 461:               // ‚ñ°
                 case KeyEvent.VK_SPACE:
                     break;
-                }    
+                }
 //System.err.println("boardLine: " + boardLine + "/" + (getLineCount() - 1) + ", " + boardPage + "/" + (getPageCount() - 1));
             }
 
@@ -201,21 +201,21 @@ status = "5:" + e;
                 g.setFont(font);
 
                 g.setColor(Color.yellow);
-                String boardMode = "Åú î¬ëIë " + (page + 1) + "/" + getPageCount();
-                g.drawString(boardMode, fontSize * 3, fontSize * 3); 
+                String boardMode = "‚óè ÊùøÈÅ∏Êäû " + (page + 1) + "/" + getPageCount();
+                g.drawString(boardMode, fontSize * 3, fontSize * 3);
 
                 for (int i = 0; i < getLineCount(); i++) {
                     String cursor;
                     if (line == i) {
                         g.setColor(Color.blue);
-                        cursor = "ÅÑ";
+                        cursor = "Ôºû";
                     } else {
                         g.setColor(Color.white);
-                        cursor = "Å@";
+                        cursor = "„ÄÄ";
                     }
                     BbsBoard board = (BbsBoard) boards.get(getIndex(i));
                     String boardName = cursor + board.name;
-                    g.drawString(boardName, fontSize * 3, i * fontSize * 2 + fontSize * 5); 
+                    g.drawString(boardName, fontSize * 3, i * fontSize * 2 + fontSize * 5);
                 }
             }
         }
@@ -233,7 +233,7 @@ status = "5:" + e;
             int getLineCount() {
                 return Math.min(LINES, threads.size() - page * LINES);
             }
-            
+
             int getPageCount() {
                 return (threads.size() + LINES - 1) / LINES;
             }
@@ -285,27 +285,27 @@ status = "5:" + e;
                         line = 0;
                     }
                     break;
-                case KeyEvent.VK_ENTER: // Åõ
+                case KeyEvent.VK_ENTER: // ‚óã
                     try {
                         BbsThread thread = (BbsThread) threads.get(getCurrentIndex());
                         mona.setTargetThread(thread);
                         mona.startLive();
-    
+
                         Thread viewThread = new Thread(viewVC);
                         viewThread.start();
-    
+
                         mode = MODE_VIEW;
 System.err.println("MODE: VIEW");
                     } catch (Exception e) {
 status = "4:" + e;
                     }
                     break;
-                case 461:               // Å†
+                case 461:               // ‚ñ°
                 case KeyEvent.VK_SPACE:
                     mode = MODE_BOARD;
 System.err.println("MODE: BOARD");
                     break;
-                }    
+                }
 //System.err.println("threadLine: " + threadLine + "/" + (getLineCount() - 1) + ", " + threadPage + "/" + (getPageCount() - 1));
             }
 
@@ -316,22 +316,22 @@ System.err.println("MODE: BOARD");
                 g.setFont(font);
 
                 g.setColor(Color.yellow);
-                String threadMode = "Åú ÉXÉåëIë " + (page + 1) + "/" + getPageCount();
-                g.drawString(threadMode, fontSize * 3, fontSize * 3); 
+                String threadMode = "‚óè „Çπ„É¨ÈÅ∏Êäû " + (page + 1) + "/" + getPageCount();
+                g.drawString(threadMode, fontSize * 3, fontSize * 3);
 
                 for (int i = 0; i < getLineCount(); i++) {
                     String cursor;
                     if (line == i) {
                         g.setColor(Color.blue);
-                        cursor = "ÅÑ";
+                        cursor = "Ôºû";
                     } else {
                         g.setColor(Color.white);
-                        cursor = "Å@";
+                        cursor = "„ÄÄ";
                     }
                     BbsThread thread = (BbsThread) threads.get(getIndex(i));
 //                    String dateFormat = "yyyy/MM/dd HH:mm:ss";
                     String threadName = cursor + thread.getTitle() + " (" + thread.getResponses() + ")" /* + "         " + new SimpleDateFormat(dateFormat).format(new Date(thread.sinse)) */;
-                    g.drawString(threadName, fontSize * 3, i * fontSize * 2 + fontSize * 5); 
+                    g.drawString(threadName, fontSize * 3, i * fontSize * 2 + fontSize * 5);
                 }
             }
         }
@@ -345,7 +345,7 @@ System.err.println("MODE: BOARD");
                 int keyCode = event.getKeyCode();
                 switch (keyCode) {
                 case KeyEvent.VK_UP:
-                    // back scroll Ç∆Ç©
+                    // back scroll „Å®„Åã
                     break;
                 case KeyEvent.VK_LEFT:
                     if (wait <= 950) {
@@ -363,9 +363,9 @@ status = "wait: " + wait;
                     break;
                 case KeyEvent.VK_DOWN:
                     break;
-                case KeyEvent.VK_ENTER: // Åõ
+                case KeyEvent.VK_ENTER: // ‚óã
                     break;
-                case 461:               // Å†
+                case 461:               // ‚ñ°
                 case KeyEvent.VK_SPACE:
                     try {
                         if (!mona.isLiveStopped()) {
@@ -377,10 +377,10 @@ status = "wait: " + wait;
 System.err.println("MODE: THREAD");
                     } catch (Exception e) {
 e.printStackTrace(System.err);
-status = "3:" + e;                        
+status = "3:" + e;
                     }
                     break;
-                }    
+                }
             }
 
             /** model */
@@ -388,11 +388,11 @@ status = "3:" + e;
 
             /* */
             public void whenThreadUpdated(MonaEvent event) {
-                List datum = event.getBbsDatum();
-                for (int i = 0; i < datum.size(); i++) {
-                    BbsData data = (BbsData) datum.get(i);
+                List data = event.getBbsData();
+                for (int i = 0; i < data.size(); i++) {
+                    BbsData datum = (BbsData) data.get(i);
 //System.err.println(data.toStringAsFormated() + "\n");
-                    StringTokenizer lines = new StringTokenizer(data.toStringAsFormated(), "\n");
+                    StringTokenizer lines = new StringTokenizer(datum.toStringAsFormated(), "\n");
                     while (lines.hasMoreTokens()) {
                         String line = lines.nextToken();
                         this.lines.add(line);
@@ -442,9 +442,9 @@ System.err.println("SCROLL: start"/* + getHeight() / (fontSize * 2) */);
 
                 while (viewLoop) {
                     try {
-    
+
                         graphics.setFont(font);
-    
+
                         while (viewLoop && lines.size() > 0) {
                             String line = (String) lines.get(0);
                             lines.remove(0);
@@ -467,7 +467,7 @@ System.err.println("SCROLL: start"/* + getHeight() / (fontSize * 2) */);
                         Thread.sleep(1000);
                     } catch (Exception e) {
 e.printStackTrace(System.err);
-status = "1:" + e;                        
+status = "1:" + e;
                     }
                 }
 System.err.println("SCROLL: stop");
@@ -541,7 +541,7 @@ System.err.println("SCROLL: stop");
             // 1.
             try {
                 mona = new Mona();
-                boardVC.setModel(mona.getBoardsByCategory("é¿ãµch"));
+                boardVC.setModel(mona.getBoardsByCategory("ÂÆüÊ≥Åch"));
 
                 mona.addMonaListener(viewVC);
             } catch (Exception e) {
@@ -595,8 +595,8 @@ repaint();
 // g.setColor(Color.pink);
 // g.fillRect(0, 0, getWidth(), getHeight());
 // g.setColor(Color.blue);
-// g.drawString("BD-J Mona (c) 2008 VAVI", 36, 36); 
-// g.drawString(status, 36, 60); 
+// g.drawString("BD-J Mona (c) 2008 VAVI", 36, 36);
+// g.drawString(status, 36, 60);
 // break;
             case MODE_BOARD:
                 boardVC.paint(g);

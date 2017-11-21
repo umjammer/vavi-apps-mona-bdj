@@ -20,7 +20,7 @@ import vavi.util.bdj.Cp932;
 
 
 /**
- * BbsThread. 
+ * BbsThread.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080831 nsano initial version <br>

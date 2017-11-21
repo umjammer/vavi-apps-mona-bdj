@@ -6,13 +6,13 @@ package vavi.util.bdj;
 
 
 /**
- * SJIS / UNICODE •ÏŠ·ƒe[ƒuƒ‹ ‹y‚Ñ UNICODE •ÏŠ· - Sjis.class
- * 
+ * SJIS / UNICODE å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ« åŠã³ UNICODE å¤‰æ› - Sjis.class
+ *
  * <p>
- * ‚±‚ÌƒNƒ‰ƒX‚Íƒlƒbƒgƒ[ƒN‰z‚µ‚Éæ“¾‚·‚é Shift Jis ƒR[ƒh‚Ì
- * ƒtƒ@ƒCƒ‹ƒf[ƒ^‚ğ Unicode ‚É•ÏŠ·‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX‚Å‚·B
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯è¶Šã—ã«å–å¾—ã™ã‚‹ Shift Jis ã‚³ãƒ¼ãƒ‰ã®
+ * ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’ Unicode ã«å¤‰æ›ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
  * </p>
- * 
+ *
  * @author Shinichi Hagiwara
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 1.0, 10/12/97
@@ -24,8 +24,8 @@ public final class Sjis {
     }
 
     /**
-     * Shift Jis ƒR[ƒh 0x8100 ` 0x9fbc –˜‚Ì•ÏŠ·ƒe[ƒuƒ‹
-     * TODO Ÿè‚É‚¢‚¶‚Á‚½‚¯‚Ç‘åä•vH 0x85, 0x87
+     * Shift Jis ã‚³ãƒ¼ãƒ‰ 0x8100 ã€œ 0x9fbc è¿„ã®å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«
+     * TODO å‹æ‰‹ã«ã„ã˜ã£ãŸã‘ã©å¤§ä¸ˆå¤«ï¼Ÿ 0x85, 0x87
      */
     private static final String block1[] = {
         /* 0x81 */ "\u3000\u3001\u3002\uff0c\uff0e\u30fb\uff1a\uff1b\uff1f\uff01\u309b\u309c\u00b4\uff40\u00a8\uff3e\uffe3\uff3f\u30fd\u30fe\u309d\u309e\u3003\u4edd\u3005\u3006\u3007\u30fc\u2015\u2010\uff0f\\\u301c\u2016\uff5c\u2026\u2025\u2018\u2019\u201c\u201d\uff08\uff09\u3014\u3015\uff3b\uff3d\uff5b\uff5d\u3008\u3009\u300a\u300b\u300c\u300d\u300e\u300f\u3010\u3011\uff0b\u2212\u00b1\u00d7\0\u00f7\uff1d\u2260\uff1c\uff1e\u2266\u2267\u221e\u2234\u2642\u2640\u00b0\u2032\u2033\u2103\uffe5\uff04\u00a2\u00a3\uff05\uff03\uff06\uff0a\uff20\u00a7\u2606\u2605\u25cb\u25cf\u25ce\u25c7\u25c6\u25a1\u25a0\u25b3\u25b2\u25bd\u25bc\u203b\u3012\u2192\u2190\u2191\u2193\u3013\0\0\0\0\0\0\0\0\0\0\0\u2208\u220b\u2286\u2287\u2282\u2283\u222a\u2229\0\0\0\0\0\0\0\0\u2227\u2228\u00ac\u21d2\u21d4\u2200\u2203\0\0\0\0\0\0\0\0\0\0\0\u2220\u22a5\u2312\u2202\u2207\u2261\u2252\u226a\u226b\u221a\u223d\u221d\u2235\u222b\u222c\0\0\0\0\0\0\0\u212b\u2030\u266f\u266d\u266a\u2020\u2021\u00b6\0\0\0\0\u25ef",
@@ -62,7 +62,7 @@ public final class Sjis {
     };
 
     /**
-     * Shift Jis ƒR[ƒh 0xe000 ` 0xfcbc –˜‚Ì•ÏŠ·ƒe[ƒuƒ‹
+     * Shift Jis ã‚³ãƒ¼ãƒ‰ 0xe000 ã€œ 0xfcbc è¿„ã®å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«
      */
     private static final String block2[] = {
         /* 0xe0 */ "\u6f3e\u6f13\u6ef7\u6f86\u6f7a\u6f78\u6f81\u6f80\u6f6f\u6f5b\u6ff3\u6f6d\u6f82\u6f7c\u6f58\u6f8e\u6f91\u6fc2\u6f66\u6fb3\u6fa3\u6fa1\u6fa4\u6fb9\u6fc6\u6faa\u6fdf\u6fd5\u6fec\u6fd4\u6fd8\u6ff1\u6fee\u6fdb\u7009\u700b\u6ffa\u7011\u7001\u700f\u6ffe\u701b\u701a\u6f74\u701d\u7018\u701f\u7030\u703e\u7032\u7051\u7063\u7099\u7092\u70af\u70f1\u70ac\u70b8\u70b3\u70ae\u70df\u70cb\u70dd\0\u70d9\u7109\u70fd\u711c\u7119\u7165\u7155\u7188\u7166\u7162\u714c\u7156\u716c\u718f\u71fb\u7184\u7195\u71a8\u71ac\u71d7\u71b9\u71be\u71d2\u71c9\u71d4\u71ce\u71e0\u71ec\u71e7\u71f5\u71fc\u71f9\u71ff\u720d\u7210\u721b\u7228\u722d\u722c\u7230\u7232\u723b\u723c\u723f\u7240\u7246\u724b\u7258\u7274\u727e\u7282\u7281\u7287\u7292\u7296\u72a2\u72a7\u72b9\u72b2\u72c3\u72c6\u72c4\u72ce\u72d2\u72e2\u72e0\u72e1\u72f9\u72f7\u500f\u7317\u730a\u731c\u7316\u731d\u7334\u732f\u7329\u7325\u733e\u734e\u734f\u9ed8\u7357\u736a\u7368\u7370\u7378\u7375\u737b\u737a\u73c8\u73b3\u73ce\u73bb\u73c0\u73e5\u73ee\u73de\u74a2\u7405\u746f\u7425\u73f8\u7432\u743a\u7455\u743f\u745f\u7459\u7441\u745c\u7469\u7470\u7463\u746a\u7476\u747e\u748b\u749e\u74a7\u74ca\u74cf\u74d4\u73f1",
@@ -97,11 +97,11 @@ public final class Sjis {
     };
 
     /**
-     * Shift Jis 1•¶š‚ğ Unicode ‚É•ÏŠ·‚·‚éB
-     * 
+     * Shift Jis 1æ–‡å­—ã‚’ Unicode ã«å¤‰æ›ã™ã‚‹ã€‚
+     *
      * @param cu 0x81 - 0x9f, 0xe0 - 0xfc (- 0xee this program)
      * @param cl 0x40 - 0x7e, 0x80 - 0xfc
-     * @return Unicode •¶šB
+     * @return Unicode æ–‡å­—ã€‚
      */
     public static char toUnicode(int cu, int cl) {
         try {
@@ -116,15 +116,15 @@ public final class Sjis {
             return (char) cu;
         } catch (Exception e) {
 System.err.println("SJIS ERROR: 0x" + Integer.toHexString(cu) + Integer.toHexString(cl));
-            return '¬';
+            return 'ã€“';
         }
     }
 
     /**
-     * Shift Jis •¶š—ñ‚ğ Unicode •¶š—ñ‚É•ÏŠ·‚·‚éB
-     * 
-     * @param s Shift JIS ƒR[ƒh‚Ì•¶š—ñB
-     * @return Unicode •¶š—ñB
+     * Shift Jis æ–‡å­—åˆ—ã‚’ Unicode æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹ã€‚
+     *
+     * @param s Shift JIS ã‚³ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—ã€‚
+     * @return Unicode æ–‡å­—åˆ—ã€‚
      */
     public static String toUnicode(byte[] s) {
         int sl = s.length;

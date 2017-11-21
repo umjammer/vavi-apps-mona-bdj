@@ -6,30 +6,29 @@
 
 package vavi.apps.mona;
 
-import vavi.util.bdj.Util;
 
 
 /**
- * BbsData. 
+ * BbsData.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080901 nsano initial version <br>
  */
 public class BbsData {
 
-    /** uƒŒƒXv”Ô† */
+    /** ã€Œãƒ¬ã‚¹ã€ç•ªå· */
     private int index;
-    /** –¼‘O */
+    /** åå‰ */
     private String name;
-    /** ƒ[ƒ‹ */
+    /** ãƒ¡ãƒ¼ãƒ« */
     private String email;
-    /** “ú•t ID BE-ID */
+    /** æ—¥ä»˜ ID BE-ID */
 //    private Date date;
     private String id;
 //    private String beid;
-    /** –{•¶ */
+    /** æœ¬æ–‡ */
     private String text;
-    /** ƒXƒŒƒbƒhƒ^ƒCƒgƒ‹ */
+    /** ã‚¹ãƒ¬ãƒƒãƒ‰ã‚¿ã‚¤ãƒˆãƒ« */
     private String title;
 
     /** */
@@ -48,12 +47,12 @@ public class BbsData {
     }
 
     public String getTextAsPlainText() {
-        return Util.toPlainText(text);
+        return HtmlUtil.toPlainText(text);
     }
 
     public String getEmailAsFormated() {
         if ("sage".equals(email)) {
-            return "«";
+            return "â†“";
         } else {
             return email;
         }

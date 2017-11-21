@@ -21,14 +21,14 @@ import vavi.util.bdj.Cp932;
 
 
 /**
- * MyBbsDatumFactory. 
+ * MyBbsDatumFactory.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080901 nsano initial version <br>
  */
 public class MyBbsDatumFactory implements BbsDatumFactory {
 
-    /** 
+    /**
      * @param thread lastModified, size
      */
     public List readFrom(BbsThread thread) throws IOException {
@@ -47,7 +47,7 @@ public class MyBbsDatumFactory implements BbsDatumFactory {
                 uc.setRequestProperty("Range", "bytes=" + thread.getSize() + "-");
             } else {
 //System.err.println("NORMAL");
-                // TODO GZIPInputStream Ç™ PS3 Ç≈ìÆÇ©ÇÒ...
+                // TODO GZIPInputStream „Åå PS3 „ÅßÂãï„Åã„Çì...
 //                uc.setRequestProperty("Accept-Encoding", "gzip");
             }
             uc.connect();
@@ -134,9 +134,9 @@ System.err.println("ABON");
                     p = q + 2;
                 }
                 datum.add(new BbsData(thread.getIndex(), name, email, id, text, title));
-                ((BbsData) datum.get(datum.size() - 1)).raw = row; 
+                ((BbsData) datum.get(datum.size() - 1)).raw = row;
                 thread.setIndex(thread.getIndex() + 1);
-            }   
+            }
             return datum;
         } finally {
             uc.disconnect();

@@ -9,7 +9,7 @@ package vavi.apps.mona;
 
 /**
  * BbsBoard.
- * 
+ *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080829 nsano initial version <br>
  */

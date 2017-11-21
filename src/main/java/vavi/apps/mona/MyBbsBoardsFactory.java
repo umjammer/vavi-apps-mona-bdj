@@ -18,8 +18,8 @@ import vavi.util.bdj.Cp932;
 
 /**
  * MyBbsBoardsFactory.
- * 
- * @author Ç†Ç…Ç∑
+ *
+ * @author „ÅÇ„Å´„Åô
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 080829 nsano initial version <br>
  */
@@ -92,12 +92,12 @@ loop:
                                 state = State_Url;
                             }
                         }
-    
+
                     }
                     break;
                 }
             }
-    
+
             return boards;
         } finally {
             uc.disconnect();

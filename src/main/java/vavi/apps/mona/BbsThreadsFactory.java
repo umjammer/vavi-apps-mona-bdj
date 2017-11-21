@@ -11,7 +11,7 @@ import java.util.List;
 
 
 /**
- * BbsThreadsFactory. 
+ * BbsThreadsFactory.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 081221 nsano initial version <br>

@@ -11,15 +11,17 @@ import java.util.List;
 
 
 /**
- * BbsBoardsFactory.
+ * BbsDataFactory.
  *
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 081221 nsano initial version <br>
  */
-public interface BbsBoardsFactory {
+public interface BbsDataFactory {
 
-    /** */
-    List readFrom(String url) throws IOException;
+    /**
+     * @param thread lastModified, size
+     */
+    List readFrom(BbsThread thread) throws IOException;
 }
 
 /* */
